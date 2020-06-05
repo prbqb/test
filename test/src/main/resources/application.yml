@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+spring:
+  rabbitmq:
+    username: admin
+    host: 192.168.1.185
+    password: admin
+    virtual-host: my_vhost
+    listener:
+      simple:
+        acknowledge-mode: manual
+      direct:
+        acknowledge-mode: manual
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 1000ms
+    publisher-returns: true
+    publisher-confirms: true
+  application:
+    name: server-a
+
+eureka:
+  client:
+    serviceUrl: #注册中心的注册地址
+      defaultZone: http://127.0.0.1:8083/eureka/

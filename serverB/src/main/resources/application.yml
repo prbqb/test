@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+spring:
+  rabbitmq:
+    username: admin
+    host: 192.168.1.185
+    password: admin
+    virtual-host: my_vhost
+    listener:
+      simple:
+        acknowledge-mode: manual
+      direct:
+        acknowledge-mode: manual
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 1000ms
+    publisher-returns: true
+    publisher-confirms: true
+  application:
+    name: server-b
+
+
+eureka:
+  client:
+    serviceUrl: #注册中心的注册地址
+      defaultZone: http://127.0.0.1:8083/eureka/
+feign:
+  httpclient:
+    connection-timeout: 20000
+
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
