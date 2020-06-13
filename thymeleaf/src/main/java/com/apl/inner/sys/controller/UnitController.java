@@ -1,13 +1,13 @@
 package com.apl.inner.sys.controller;
 
 
-import com.apl.inner.sys.feign.AFeign;
 import com.apl.inner.sys.pojo.PlatformOutOrderStockBo;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 ;import javax.servlet.AsyncContext;
 import javax.servlet.AsyncEvent;
 import javax.servlet.AsyncListener;
@@ -16,9 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -29,8 +27,6 @@ import java.util.List;
 @RequestMapping("/test")
 public class UnitController {
 
-    @Autowired
-    AFeign aFeign;
 
     @GetMapping("/sse-invoke")
     public void getList(PlatformOutOrderStockBo platformOutOrderStockBo) throws IOException {
@@ -41,17 +37,28 @@ public class UnitController {
         actx.getResponse().getWriter().flush();
     }
 
-
-    @GetMapping("/send")
-    public void send() throws IOException {
-
-        List<PlatformOutOrderStockBo> ids = new ArrayList<>();
-        PlatformOutOrderStockBo platformOutOrderStockBo = new PlatformOutOrderStockBo();
-
-        ids.add(platformOutOrderStockBo);
-        aFeign.sendIds(ids);
+    @GetMapping(value = "/test")
+    public ModelAndView test(HttpServletRequest req) {
+        // UserEntity userEntity = getCurrentUser(req);
+        UserEntity user = new UserEntity();
+        user.setLoginName("tom");
+        user.setId(234);
+        user.setBindType(1);
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("user", user);
+        mv.setViewName("/show");
+        return mv;
     }
 
 
+}
 
+@Data
+class UserEntity{
+
+    private String loginName;
+
+    private Integer id;
+
+    private Integer bindType;
 }
