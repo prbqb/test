@@ -2,22 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.apl.inner.sys.mapper.DeptMapper">
 
-    <resultMap id="deptMap" type="com.apl.inner.sys.pojo.DeptPo">
-        <id property="id"></id>
-        <result column="dept_name" property="id"/>
-        <collection property="employeePos" ofType="com.apl.inner.sys.pojo.EmployeePo">
-            <id column="eId" property="id"/>
+    <resultMap id="BasePlusResultMap" type="com.apl.inner.sys.pojo.DeptPo">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <collection property="employeePos" ofType="com.apl.inner.sys.pojo.EmployeePo" >
+            <id column="eId" jdbcType="BIGINT" property="id" />
+            <result column="eName" jdbcType="VARCHAR" property="deptName" />
+            <result column="age" jdbcType="VARCHAR" property="age" />
         </collection>
     </resultMap>
 
 
-    <select id="getDeptById" resultMap="deptMap">
+    <select id="getDeptById" resultMap="BasePlusResultMap">
     SELECT
         d.id,
         d.dept_name deptName,
         e.id eId,
         e.e_name eName,
-        e.age
+        e.age age
 
     FROM
         dept d
