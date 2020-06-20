@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="apl-parent" />
-        <module name="common" />
         <module name="thymeleaf" />
+        <module name="serverB (1)" />
+        <module name="apl-parent" />
         <module name="apl-cloud-registry-service" />
         <module name="serverB" />
+        <module name="common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +19,7 @@
       <module name="apl-parent" target="1.8" />
       <module name="common" target="1.8" />
       <module name="serverB" target="1.8" />
+      <module name="serverB (1)" target="1.8" />
       <module name="thymeleaf" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -27,6 +29,7 @@
       <module name="apl-parent" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="serverB" options="-parameters" />
+      <module name="serverB (1)" options="-parameters" />
       <module name="thymeleaf" options="-parameters" />
     </option>
   </component>

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/test/apl-parent.iml" filepath="$PROJECT_DIR$/test/apl-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/serverB/serverB.iml" filepath="$PROJECT_DIR$/serverB/serverB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm/serverB (1).iml" filepath="$PROJECT_DIR$/ssm/serverB (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/temp.iml" filepath="$PROJECT_DIR$/.idea/temp.iml" />
       <module fileurl="file://$PROJECT_DIR$/thymeleaf/thymeleaf.iml" filepath="$PROJECT_DIR$/thymeleaf/thymeleaf.iml" />
     </modules>

@@ -1,0 +1,27 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: server-b
+  datasource:
+    url: jdbc:mysql://192.168.1.185:3307/cy_test_order?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+
+logging:
+  level:
+    com:
+      apl:
+        inner:
+          sys:
+            mapper: debug

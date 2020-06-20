@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apl.inner.sys.mapper.DeptMapper">
+
+    <resultMap id="deptMap" type="com.apl.inner.sys.pojo.DeptPo">
+        <id property="id" column="id"></id>
+        <result column="dept_name" property="id"/>
+        <collection property="employeePos" ofType="com.apl.inner.sys.pojo.EmployeePo">
+            <id column="eId" property="id"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="getDeptById" resultMap="deptMap">
+    SELECT
+        d.id,
+        d.dept_name deptName,
+        e.id eId,
+        e.e_name eName,
+        e.age
+
+    FROM
+        dept d
+        LEFT JOIN employee  e ON d.id = e.dept_id
+    WHERE
+        d.id = #{deptId}
+</select>
+
+
+</mapper>

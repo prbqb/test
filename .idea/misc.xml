@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/apl-cloud-registry-service/pom.xml" />
         <option value="$PROJECT_DIR$/thymeleaf/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm/pom.xml" />
       </list>
     </option>
   </component>
