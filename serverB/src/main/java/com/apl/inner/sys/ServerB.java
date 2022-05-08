@@ -21,6 +21,7 @@ public class ServerB {
         SpringApplication.run(ServerB.class, args);
         System.out.println("i am new doing ");
         System.out.println("commit file ");
+        System.out.println("i am user2 branch this is my new function");
     }
 
 
