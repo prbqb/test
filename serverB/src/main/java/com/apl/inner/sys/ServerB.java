@@ -20,6 +20,7 @@ public class ServerB {
         System.out.println("i am user2");
         SpringApplication.run(ServerB.class, args);
         System.out.println("i am new doing ");
+        System.out.println("commit file ");
     }
 
 
