@@ -21,6 +21,7 @@ public class ServerB {
         SpringApplication.run(ServerB.class, args);
         System.out.println("i am new doing ");
         System.out.println("commit file ");
+        System.out.println("ok i know you user2. i am user1 , i have new function too!!!");
     }
 
 
