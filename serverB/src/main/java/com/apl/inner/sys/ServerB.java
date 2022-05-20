@@ -6,6 +6,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +23,7 @@ public class ServerB {
 
     public static void main(String[] args) {
         List<Map> list = new ArrayList<>();
+        Map map = new HashMap();
         System.out.println("i am user2");
         SpringApplication.run(ServerB.class, args);
         System.out.println("i am new doing ");
