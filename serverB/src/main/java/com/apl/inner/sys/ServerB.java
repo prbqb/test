@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author CY
  * @version 1.0.0
@@ -17,6 +21,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class ServerB {
 
     public static void main(String[] args) {
+        List<Map> list = new ArrayList<>();
         System.out.println("i am user2");
         SpringApplication.run(ServerB.class, args);
         System.out.println("i am new doing ");
