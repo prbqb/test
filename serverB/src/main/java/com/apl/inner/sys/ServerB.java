@@ -29,6 +29,7 @@ public class ServerB {
         System.out.println("i am new doing ");
         System.out.println("commit file ");
         System.out.println("i am user2");
+
     }
 
 
